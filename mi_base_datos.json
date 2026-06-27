@@ -1,0 +1,18 @@
+{
+    "nop": {
+        "dinero": 8000,
+        "Contrase\u00f1a": "555"
+    },
+    "Cris": {
+        "dinero": 5000,
+        "Contrase\u00f1a": "444"
+    },
+    "Sof": {
+        "dinero": 5000,
+        "Contrase\u00f1a": "999"
+    },
+    "Jes": {
+        "dinero": null,
+        "Contrase\u00f1a": "sa"
+    }
+}
