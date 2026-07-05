@@ -1,9 +1,10 @@
 from funciones.diccionarios import DiccionarioDinero
-from funciones.validaciones import ValidarQueSeaNum , ValidarNumPositivo
+from funciones.validaciones import ValidarQueSeaNum , ValidarNumPositivo , PedirNum
 from funciones.menus import OpcionesPrincipalesDinero
+from pruebaj.DiccJson import cambiarDinero , leerDicc
 
 def DecisionPrincipalDinero():
-    Desicion = int(input ("Que quieres hacer? "))
+    Desicion = PedirNum("")
     
     if Desicion == 1:
         return 1
@@ -17,7 +18,7 @@ def DecisionPrincipalDinero():
 def Retiro(usuario):
     
     op = 5
-    DiccDinero = DiccionarioDinero()
+    DiccDinero = leerDicc()
     DineroUsuario = int(DiccDinero[usuario])
       
     while op > 0:
@@ -68,7 +69,7 @@ def GuardarNuevoDinero( NuevoDinero , usuario ):
 
 def Deposito(usuario):
     intentos = 5
-    DiccDinero = DiccionarioDinero()
+    DiccDinero = leerDicc()
     DineroUsuario = DiccDinero[usuario]
     
     print('Su dinero en cueta es de:', DineroUsuario , 'pesos')
@@ -81,7 +82,7 @@ def Deposito(usuario):
             print("Ingresa un valor valido")
             continue
         
-        if ValidarNumPositivo() == False:
+        if ValidarNumPositivo(cantidad) == False:
             intentos -=1
             print("No se pueden ingresar numeros negativos")
             print("Ingrese un valor valido")
@@ -101,18 +102,18 @@ def Deposito(usuario):
     return None
     
 def mainRetiro(usuario):
-    NuevoDinero = Retiro(usuario)
-    if NuevoDinero is not None:
-        GuardarNuevoDinero(NuevoDinero , usuario)
+    d = Retiro(usuario)
+    if d is not None:
+        cambiarDinero( usuario , d)
 
     else:
         print("Fallo inesperado, intente mas tarde")
     
 def mainDeposito(usuario):
-    NuevoDinero = Deposito(usuario)
+    d = Deposito(usuario)
     
-    if NuevoDinero is not None:
-        GuardarNuevoDinero(NuevoDinero , usuario)
+    if d is not None:
+        cambiarDinero( usuario , d)
 
     else:
         print("Fallo insesperado, intente mas tarde")
