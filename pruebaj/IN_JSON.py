@@ -17,7 +17,7 @@ def PedirC():
     return c
 
 def validarC(u , c , DU):
-    if c == DU[u]["Contraseña"]:
+    if c == DU[u][c]:
         print("Incio de sesion correcto")
         return True
     else:

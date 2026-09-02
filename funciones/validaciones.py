@@ -14,6 +14,7 @@ def ValidarNumPositivo(cantidad):
         return False
     
 def PedirNum(pregunta):
+    
     o = 4
     
     while o > 0:
