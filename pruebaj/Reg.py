@@ -48,6 +48,3 @@ def mainRegistroJson():
         GuardarDatosJson(u , d , c )
     else:
         print("No se a podido crear el usuario vuelva mas tarde")
-    
-mainRegistroJson()
-    

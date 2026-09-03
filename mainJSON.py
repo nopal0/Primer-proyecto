@@ -6,13 +6,13 @@ from funciones.dinero import mainDinero
 def main():
     o = PedirNum("[1]Iniciar sesion [2Registro]")
     if o == 1:
-        mainIN()
-        mainDinero()
+        u = mainIN()
+        mainDinero(u)
         
     elif o == 2:
         
-        mainRegistroJson()
-        mainDinero()
+        u = mainRegistroJson()
+        mainDinero(u)
         
     else:
         print("")

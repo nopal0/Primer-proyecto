@@ -15,11 +15,11 @@ def DecisionPrincipalDinero():
     elif Desicion == 3:
         print("Sailendo del sistema...")
         
-def Retiro(usuario):
+def Retiro(u):
     
     op = 5
-    DiccDinero = leerDicc()
-    DineroUsuario = int(DiccDinero[usuario])
+    DD = leerDicc()
+    DineroUsuario = DD[u]["Dinero"]
       
     while op > 0:
         
@@ -59,18 +59,18 @@ def OperacionRetiro(cantidad , DineroUsuario):
         print("La cantidad disponible a retirar es de", DineroUsuario , "pesos")
         return None
 
-def GuardarNuevoDinero( NuevoDinero , usuario ):
+def GuardarNuevoDinero( NuevoDinero , u ):
     DiccDinero = DiccionarioDinero()
-    DiccDinero[usuario] = NuevoDinero
+    DiccDinero[u] = NuevoDinero
     with open ("datos/Dinero.txt", "w")as archivo:
-        for usuario in DiccDinero:
-            DineroActualizado = f"{usuario}:{DiccDinero[usuario]}\n"
+        for u in DiccDinero:
+            DineroActualizado = f"{u}:{DiccDinero[u]}\n"
             archivo.write(DineroActualizado)
 
-def Deposito(usuario):
+def Deposito(u):
     intentos = 5
     DiccDinero = leerDicc()
-    DineroUsuario = DiccDinero[usuario]
+    DineroUsuario = DiccDinero[u]
     
     print('Su dinero en cueta es de:', DineroUsuario , 'pesos')
 
@@ -101,33 +101,31 @@ def Deposito(usuario):
     print("Demasiados intentos vuelva mas tarde")
     return None
     
-def mainRetiro(usuario):
-    d = Retiro(usuario)
+def mainRetiro(u):
+    d = Retiro(u)
     if d is not None:
-        cambiarDinero( usuario , d)
+        cambiarDinero( u , d)
 
     else:
         print("Fallo inesperado, intente mas tarde")
     
-def mainDeposito(usuario):
-    d = Deposito(usuario)
+def mainDeposito(u):
+    d = Deposito(u)
     
     if d is not None:
-        cambiarDinero( usuario , d)
+        cambiarDinero( u , d)
 
     else:
         print("Fallo insesperado, intente mas tarde")
 
-def mainDinero(usuario):
+def mainDinero(u):
     
     
     OpcionesPrincipalesDinero()
     r = DecisionPrincipalDinero()
     
     if r == 1:
-        mainRetiro(usuario)
+        mainRetiro(u)
         
     elif r == 2:
-        mainDeposito(usuario)
-    
-        
+        mainDeposito(u)
