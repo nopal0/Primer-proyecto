@@ -1,9 +1,8 @@
 {
     "nop": {
-        "dinero": 8000,
+        "dinero": 7500,
         "Contrase\u00f1a": "555"
     },
-    "Cris": 5080,
     "Sof": {
         "dinero": 5000,
         "Contrase\u00f1a": "999"
@@ -19,5 +18,17 @@
     "Nep": {
         "dinero": 8000,
         "Contrase\u00f1a": "777"
+    },
+    "Miu": {
+        "dinero": 1234,
+        "Contrase\u00f1a": "4444"
+    },
+    "olga": {
+        "dinero": 8000,
+        "Contrase\u00f1a": "4444"
+    },
+    "lol": {
+        "dinero": 10000,
+        "Contrase\u00f1a": "4444"
     }
 }

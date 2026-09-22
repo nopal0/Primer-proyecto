@@ -1,6 +1,6 @@
-def ValidarQueSeaNum():
+def ValidarQueSeaNum(opcion):
     try:
-        cantidad = int(input("De que monto sera el movimiento a realizar?: "))
+        cantidad = int(input("De que monto sera " + opcion + "?: "))
         return cantidad
     except ValueError:
         print("Error: Se debe de ingresar un numero")

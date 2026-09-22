@@ -1,7 +1,6 @@
-from funciones.diccionarios import DiccionarioDinero
 from funciones.validaciones import ValidarQueSeaNum , ValidarNumPositivo , PedirNum
 from funciones.menus import OpcionesPrincipalesDinero
-from pruebaj.DiccJson import cambiarDinero , leerDicc
+from funciones.DiccJson import cambiarDinero , leerDicc
 
 def DecisionPrincipalDinero():
     Desicion = PedirNum("")
@@ -23,7 +22,7 @@ def Retiro(u):
       
     while op > 0:
         
-        cantidad = ValidarQueSeaNum() 
+        cantidad = ValidarQueSeaNum("el retiro que dese realizar") 
         
         if cantidad is None:
             op -= 1
@@ -59,23 +58,15 @@ def OperacionRetiro(cantidad , DineroUsuario):
         print("La cantidad disponible a retirar es de", DineroUsuario , "pesos")
         return None
 
-def GuardarNuevoDinero( NuevoDinero , u ):
-    DiccDinero = DiccionarioDinero()
-    DiccDinero[u] = NuevoDinero
-    with open ("datos/Dinero.txt", "w")as archivo:
-        for u in DiccDinero:
-            DineroActualizado = f"{u}:{DiccDinero[u]}\n"
-            archivo.write(DineroActualizado)
-
 def Deposito(u):
     intentos = 5
-    DiccDinero = leerDicc()
-    DineroUsuario = DiccDinero[u]["dinero"]
+    DiccDiner = leerDicc()
+    DineroUsuario = DiccDiner[u]["dinero"]
     
     print('Su dinero en cueta es de:', DineroUsuario , 'pesos')
 
     while  intentos > 0:
-        cantidad = ValidarQueSeaNum()
+        cantidad = ValidarQueSeaNum("el deposito que dese realizar")
         
         if cantidad is None:
             intentos -=1

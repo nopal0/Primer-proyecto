@@ -1,4 +1,4 @@
-from pruebaj.DiccJson import leerDicc
+from funciones.DiccJson import leerDicc
 import json
 
 def PedirU():
@@ -46,5 +46,6 @@ def mainRegistroJson():
     if d is not None:
         c = PedirC()
         GuardarDatosJson(u , d , c )
+        return u
     else:
         print("No se a podido crear el usuario vuelva mas tarde")

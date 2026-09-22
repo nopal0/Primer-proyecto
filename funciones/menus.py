@@ -1,5 +1,3 @@
-
-
 def OpcionesPrincipalesDinero():
     Opcion1 = ["Retirar dinero[1]: " , "Depositar dinero[2]: " , "Salir[3]: "]
     
@@ -7,7 +5,7 @@ def OpcionesPrincipalesDinero():
         print(linea)
 
 def MostrarOpciones():
-    OpcionesRegistro = ["[1]Iniciar sesion: ","[2]1Salir de la aplicacion: "]
+    OpcionesRegistro = ["[1]Iniciar sesion: ","[2]Salir de la aplicacion: ","[3]Registrarse: "]
     
     for linea in OpcionesRegistro:
         print(linea)
