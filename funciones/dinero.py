@@ -19,7 +19,7 @@ def Retiro(u):
     
     op = 5
     DD = leerDicc()
-    DineroUsuario = DD[u]["Dinero"]
+    DineroUsuario = DD[u]["dinero"]
       
     while op > 0:
         
@@ -70,7 +70,7 @@ def GuardarNuevoDinero( NuevoDinero , u ):
 def Deposito(u):
     intentos = 5
     DiccDinero = leerDicc()
-    DineroUsuario = DiccDinero[u]
+    DineroUsuario = DiccDinero[u]["dinero"]
     
     print('Su dinero en cueta es de:', DineroUsuario , 'pesos')
 

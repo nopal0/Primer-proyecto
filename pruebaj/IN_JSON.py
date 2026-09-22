@@ -31,7 +31,7 @@ def mainIN():
     if u is not None:
         c = PedirC()
         validarC(u , c , DU)
-        return True
+        return u
     else:
         print("No ha sido posible iniciar sesion")
         return None

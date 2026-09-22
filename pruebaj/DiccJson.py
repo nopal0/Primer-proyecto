@@ -5,7 +5,7 @@ def leerDicc():
         DU = json.load(archivo) 
         return DU
 
-def cambiarDinero(u , d , c ):
+def cambiarDinero(u , d):
     with open ("mi_base_datos.json", "r") as archivo:
         DU = json.load(archivo)
         
